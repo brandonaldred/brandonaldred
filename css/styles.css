@@ -74,6 +74,7 @@ p {
     margin-top: 50px;
     background: #000000;
     padding: 50px 0 35px 0;
+    border-bottom: 1px solid #5E5E5E;
 }
 
 #jump-offs ul {
@@ -135,4 +136,46 @@ p {
     content: url('/img/linkedin-icon.svg');
     margin-right: 5px;
     vertical-align:middle;
+}
+
+#content {
+    padding-top: 50px;
+}
+
+#content nav {
+    margin-bottom: 50px;
+}
+
+#content nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+#content nav li {
+    list-style: none;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+#content nav .selected {
+    color:#00A3FF;
+    border-bottom: 3px solid #00A3FF;
+}
+
+.projects::before {
+    content: url('/img/folder-icon.svg');
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.photos::before {
+    content: url('/img/photo-icon.svg');
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.musings::before {
+    content: url('/img/notebook-icon.svg');
+    margin-right: 10px;
+    vertical-align: middle;
 }
