@@ -92,6 +92,7 @@ p {
     width: 45%;
     vertical-align: text-top;
     height: 30px;
+    margin-bottom: 10px;
 }
 
 #jump-offs li a{
