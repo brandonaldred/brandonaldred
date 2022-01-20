@@ -1,7 +1,7 @@
 :root {
     --blue-on-dark: #00A3FF;
     --dark-gray: #2B2B2B;
-;
+    --card-background: #212121;
 }
 
 * {
@@ -185,4 +185,26 @@ p {
     content: url('/img/notebook-icon.svg');
     margin-right: 10px;
     vertical-align: middle;
+}
+
+.project-card {
+    width: 90%;
+    margin: auto;
+    background-color: var(--card-background);
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.project-card h3 {
+    padding: 25px 15px 0 15px;
+}
+
+.project-card p {
+    padding: 10px 15px 25px 15px;
+}
+
+.project-card img {
+    width: 100%;
+    position: absolute;
+    bottom: 10;
 }
