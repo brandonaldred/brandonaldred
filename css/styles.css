@@ -1,3 +1,9 @@
+:root {
+    --blue-on-dark: #00A3FF;
+    --dark-gray: #2B2B2B;
+;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +11,7 @@
 }
 
 body {
-    background: #2B2B2B;
+    background: var(--dark-gray);
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
 }
@@ -98,7 +104,7 @@ p {
 
 #jump-offs li a{
     text-decoration: none;
-    color: #00A3FF;
+    color: var(--blue-on-dark);
 
 }
 
@@ -153,13 +159,14 @@ p {
 
 #content nav li {
     list-style: none;
-    padding-bottom: 10px;
+    padding: 0 15px 10px 15px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 #content nav .selected {
-    color:#00A3FF;
-    border-bottom: 3px solid #00A3FF;
+    color:var(--blue-on-dark);
+    border-bottom: 3px solid var(--blue-on-dark);
 }
 
 .projects::before {
