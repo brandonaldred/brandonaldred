@@ -92,6 +92,11 @@ p {
     color: #ffffff;
 }
 
+.blur {
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
 #hero {
     width: 100%;
     margin: auto;
