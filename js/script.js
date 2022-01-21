@@ -2,16 +2,16 @@ const menuIcon = document.querySelector('.menu');
 const mainContent = document.getElementById('main-content');
 
 function menuClear() {
-    const navContainer = document.querySelector('.nav-container');
-    navContainer.style.display = 'none';
+    const navContainer = document.getElementById('nav-container');
+    navContainer.className = 'hide';
     menuIcon.className = 'menu';
     mainContent.classList.remove('blur');
 }
 
 menuIcon.addEventListener('click', ()=> {
-    const navContainer = document.querySelector('.nav-container');
-    if (navContainer.style.display === 'none') {
-        navContainer.style.display = 'flex';
+    const navContainer = document.getElementById('nav-container');
+    if (navContainer.className === 'hide') {
+        navContainer.className = 'nav-show';
         menuIcon.className = 'menu selected';
         mainContent.className = 'blur';
         mainContent.addEventListener('click', () => {
