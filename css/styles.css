@@ -62,7 +62,7 @@ p {
     width: 200px;
     background: var(--card-background);
     position: absolute;
-    margin-top: 82px;
+    margin-top: 84px;
     z-index: 100;
     top: 0;
     right: 0;
