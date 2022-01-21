@@ -275,6 +275,13 @@ p {
     background-color: var(--card-background);
     border-radius: var(--card-radius);
     padding-bottom: 0;
+    transition-duration: .2s;
+    transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
 }
 
 .project-card h3 {
