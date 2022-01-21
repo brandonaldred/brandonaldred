@@ -178,6 +178,10 @@ p {
 
 }
 
+#jump-offs li a:hover{
+    text-decoration: underline;
+}
+
 .home::before {
     content: url('/img/home-icon.svg');
     margin-right: 5px;
