@@ -66,18 +66,21 @@ p {
     z-index: 100;
     top: 0;
     right: 0;
+    width: 100%;
+    justify-content: center;
 }
 
 #header ul {
     list-style-type: none;
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 #header li {
+    padding: 20px;
+    width: 200px;
+    border-bottom: 1px solid var(--dark-gray);
     text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
 }
 #header li:nth-child(1) {
     margin-top: 30px;
@@ -85,11 +88,16 @@ p {
 
 #header li:nth-child(3) {
     margin-bottom: 30px;
+    border-bottom: none;
 }
 
 #header li a {
     text-decoration: none;
     color: #ffffff;
+}
+
+#header li a:hover {
+    color: var(--blue-on-dark);
 }
 
 .blur {
