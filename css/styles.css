@@ -2,7 +2,7 @@
     --blue-on-dark: #00A3FF;
     --dark-gray: #2B2B2B;
     --card-background: #212121;
-    --card-radius: 10px;
+    --card-radius: 5px;
 }
 
 * {
@@ -51,10 +51,6 @@ p {
     height: 100%;
     display: flex;
     align-items: center;
-}
-
-.selected {
-    background: var(--card-background);
 }
 
 .menu img {
@@ -223,7 +219,7 @@ p {
 }
 
 #content nav {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 #content nav ul{
@@ -236,6 +232,18 @@ p {
     padding: 0 15px 10px 15px;
     font-weight: 500;
     cursor: pointer;
+    transition-duration: .1s;
+    transition-timing-function: ease-in-out;
+}
+
+#content nav li:hover {
+    color: var(--blue-on-dark);
+    transform: scale(1.05);
+    background-color: #383838;
+    border-radius: var(--card-radius);
+    transform-origin: center;
+    margin-top: -15px;
+    padding-top: 15px;
 }
 
 #content nav .selected {
