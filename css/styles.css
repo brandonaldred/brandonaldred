@@ -324,6 +324,10 @@ p {
         margin: auto;
     }
 
+    #hero p br {
+        display: none;
+    }
+
     #main-content {
         display: flex;
         flex-wrap: wrap;
