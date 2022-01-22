@@ -19,6 +19,7 @@ body {
 
 p {
     font-weight:100;
+    line-height: 1.75em;
 }
 
 #container {
@@ -147,6 +148,10 @@ p {
     background: #000000;
     padding: 50px 0 35px 0;
     border-bottom: 1px solid #5E5E5E;
+}
+
+#jump-offs h2 {
+    display: none;
 }
 
 #jump-offs ul {
@@ -298,4 +303,53 @@ p {
     border-bottom-right-radius: 5px;
     margin: 0;
     padding: 0;
+}
+
+@media screen and (min-width: 700px) {
+    .menu {
+        display: none;
+    }
+
+    .nav-show-wide li{
+        display: inline;
+    }
+
+    #hero h1 {
+        font-size: 2em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+
+    #main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    #jump-offs {
+        width: 25%;
+        background: var(--dark-gray);
+        border-bottom: none;
+        padding: 0;
+    }
+
+    #jump-offs h2 {
+        display: block;
+        border-bottom: 1px solid #5E5E5E;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+
+    #jump-offs li {
+        width: 100%;
+    }
+
+    #content {
+        width: 65%;
+        margin-top: 50px;
+    }
 }
