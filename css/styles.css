@@ -320,6 +320,8 @@ p {
 
     #hero p {
         font-size: 1.2em;
+        max-width: 450px;
+        margin: auto;
     }
 
     #main-content {

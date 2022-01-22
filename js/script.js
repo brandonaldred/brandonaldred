@@ -2,10 +2,13 @@ const menuIcon = document.querySelector('.menu');
 const mainContent = document.getElementById('main-content');
 
 window.addEventListener("resize", function(){
+    mainContent.className = '';
     const navContainer = document.getElementById('nav-container');
     if (window.innerWidth >= 700) {
         navContainer.className = 'nav-show-wide';
-    } else { navContainer.className = 'hide'; }
+    } else {
+        navContainer.className = 'hide';
+    }
   });
 
 function menuClear() {
