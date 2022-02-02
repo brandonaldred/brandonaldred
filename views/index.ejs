@@ -14,7 +14,7 @@
                 <p><%= projects[i].body %></p>
             <% } %>
             <% if (projects[i].type === 'photo' || projects[i].type === 'project') { %>
-                <img src="<%= projects[i].image %>" alt="<%= projects[i].title %>" />
+                <img src="<%= projects[i].image %>" alt="<%= projects[i].title + projects[i]._id %>" />
             <% } %>
         </div>
     <% } %>

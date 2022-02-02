@@ -3,9 +3,10 @@ const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema( {
     type: 'String',
-    year: String,
-    month: String,
-    day: String,
+    datePosted: {
+        type: Date,
+        default: new Date()
+    },
     title: String,
     preview: String,
     body: String,

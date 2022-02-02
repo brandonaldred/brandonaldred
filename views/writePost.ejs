@@ -1,0 +1,30 @@
+<%- include('layouts/header.ejs'); -%>
+<%- include ('layouts/navigation.ejs'); -%>
+<div id="write-post">
+    <h2>Add Post</h2>
+    <form action="#" method="post">
+        <div class="option">
+            <p class="select">Type of post</p>
+            <img src="img/arrow-circle-down.svg" />
+        </div>
+        <div class="options collapsed">
+            <div class="option-hide">
+                <p class="option-item">Musing</p>
+                <p class="option-item">Project</p>
+                <p class="option-item">Photo</p>
+            </div>
+        </div>
+        <div>
+            <label for="file-upload" class="custom-file-upload">
+                Upload Photo(s)
+            </label>
+            <input id="file-upload" type="file" accept="image/*" />
+        </div>
+        <input type="text" id="title" placeholder="Title" />
+        <input type="text" id="preview" placeholder="Preview" />
+        <textarea id="body" name="body" placeholder="What's the post about?"></textarea>
+        <input type="submit" value="Add Post">
+    </form>
+</div>
+<script src="js/writePost.js"></script>
+<%- include ('layouts/footer.ejs'); %>

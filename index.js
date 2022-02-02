@@ -23,6 +23,10 @@ app.listen(3000, () => {
         res.render('index', {
             projects
         });
-    })
+    });
+
+    app.get('/writePost', (req,res) => {
+        res.render('writePost');
+    });
     
 });
