@@ -18,13 +18,8 @@ optionSelect.addEventListener('click', () => {
 
 
 function collapse(option) {
-    const p = optionSelect.querySelector('P');
-    p.innerText = '';
-    if (p.className === 'select') {
-        p.classList.remove('select');
-        p.classList.add('selected');
-    }
+    const p = optionSelect.querySelector('INPUT');
     optionSelect.querySelector('IMG').classList.remove('inverted');
     optionBox.querySelector('DIV').classList.add('option-hide');
-    p.innerText = option;
-}
+    p.value = option;
+}     

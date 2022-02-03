@@ -25,8 +25,14 @@ app.listen(3000, () => {
         });
     });
 
-    app.get('/writePost', (req,res) => {
+    app.get('/compose', (req,res) => {
         res.render('writePost');
+    });
+
+    app.post('/compose/store',(req,res) => {
+        Project.create(req.body, (error, project) => {
+            res.redirect('/');
+        })
     });
     
 });

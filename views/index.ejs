@@ -4,16 +4,16 @@
 <%- include ('layouts/links.ejs'); -%>
 <div id="content">
     <%- include ('layouts/contentNav.ejs'); -%>
-    <% for (var i = 0; i < projects.length; i++) { %>
+    <% for (var i = projects.length-1; i >= 0; i--) { %>
         <div class="project-card">
             <h3><%= projects[i].title %></h3>
-            <% if (projects[i].type === 'project') { %>
+            <% if (projects[i].type === 'Project') { %>
                 <p><%= projects[i].preview %></p>
             <% } %>
-            <% if (projects[i].type === 'photo' || projects[i].type === 'musing') { %>
+            <% if (projects[i].type === 'Photo' || projects[i].type === 'Musing') { %>
                 <p><%= projects[i].body %></p>
             <% } %>
-            <% if (projects[i].type === 'photo' || projects[i].type === 'project') { %>
+            <% if (projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
                 <img src="<%= projects[i].image %>" alt="<%= projects[i].title + projects[i]._id %>" />
             <% } %>
         </div>
