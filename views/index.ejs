@@ -6,15 +6,25 @@
     <%- include ('layouts/contentNav.ejs'); -%>
     <% for (var i = projects.length-1; i >= 0; i--) { %>
         <div class="project-card">
-            <h3><%= projects[i].title %></h3>
-            <% if (projects[i].type === 'Project') { %>
-                <p><%= projects[i].preview %></p>
-            <% } %>
-            <% if (projects[i].type === 'Photo' || projects[i].type === 'Musing') { %>
-                <p><%= projects[i].body %></p>
-            <% } %>
+            <div class="card-copy">
+                <div class="date-type card-date">
+                    <img src="img/<%= projects[i].type %>.svg" />
+                    <p>
+                        <%=  months[projects[i].datePosted.getMonth()] %>
+                        <%=  projects[i].datePosted.getDate() %>,
+                        <%=  projects[i].datePosted.getFullYear() %>
+                    </p>
+                </div>
+                <h3><%= projects[i].title %></h3>
+                <% if (projects[i].type === 'Project') { %>
+                    <p><%= projects[i].preview %></p>
+                <% } %>
+                <% if (projects[i].type === 'Photo' || projects[i].type === 'Musing') { %>
+                    <p><%= projects[i].body %></p>
+                <% } %>
+            </div>
             <% if (projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
-                <img src="<%= projects[i].image %>" alt="<%= projects[i].title + projects[i]._id %>" />
+                <img src="<%= projects[i].image %>" alt="<%= projects[i].title %>" />
             <% } %>
         </div>
     <% } %>

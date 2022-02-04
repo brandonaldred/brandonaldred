@@ -15,13 +15,28 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
 app.listen(3000, () => {
     console.log('running');
 
     app.get('/', async (req, res) => {
         const projects = await Project.find({ });
         res.render('index', {
-            projects
+            projects, months
         });
     });
 

@@ -222,16 +222,18 @@ p {
 }
 
 #content {
-    padding-top: 20px;
+    padding-top: 12px;
 }
 
 #content nav {
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 #content nav ul{
     display: flex;
     justify-content: space-around;
+    padding-left: 15px;
 }
 
 #content nav li {
@@ -241,6 +243,7 @@ p {
     cursor: pointer;
     transition-duration: .1s;
     transition-timing-function: ease-in-out;
+    font-size: .95em;
 }
 
 #content nav li:hover {
@@ -258,24 +261,6 @@ p {
     border-bottom: 3px solid var(--blue-on-dark);
 }
 
-.projects::before {
-    content: url('/img/folder-icon.svg');
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.photos::before {
-    content: url('/img/photo-icon.svg');
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.musings::before {
-    content: url('/img/notebook-icon.svg');
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
 .project-card {
     width: 90%;
     margin: 0 auto 35px auto;
@@ -291,12 +276,33 @@ p {
     transform: scale(1.02);
 }
 
-.project-card h3 {
-    padding: 25px 15px 0 15px;
+.card-copy {
+    padding: 25px;
 }
 
-.project-card p {
-    padding: 10px 15px 25px 15px;
+.card-date {
+    color: var(--light-gray);
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: .75em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.date-type {
+    display: flex;
+    align-items: center;
+}
+
+.date-type img {
+    height: 15px !important;
+    width: 15px !important;
+    margin-right: 10px !important;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.75em;
 }
 
 .project-card img {
@@ -464,7 +470,7 @@ textarea:focus {
     #jump-offs h2 {
         display: block;
         border-bottom: 1px solid var(--light-gray);
-        padding-bottom: 25px;
+        padding-bottom: 10px;
         margin-bottom: 25px;
     }
 
@@ -472,8 +478,32 @@ textarea:focus {
         width: 100%;
     }
 
+    .all::before {
+        content: url('/img/view-list.svg');
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .projects::before {
+        content: url('/img/project.svg');
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .photos::before {
+        content: url('/img/photo.svg');
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .musings::before {
+        content: url('/img/musing.svg');
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
     #content {
         width: 65%;
-        margin-top: 50px;
+        margin-top: 38px;
     }
 }
