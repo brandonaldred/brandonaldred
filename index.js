@@ -34,10 +34,17 @@ app.listen(3000, () => {
     console.log('running');
 
     app.get('/', async (req, res) => {
-        const projects = await Project.find({ });
+        const projects = await Project.find({  });
         res.render('index', {
             projects, months
         });
+    });
+
+    app.get('/:type', async (req, res) => {
+        const projects = await Project.find({
+            type: req.params.type
+        });
+        res.render('index', { projects, months })
     });
 
     app.get('/compose', (req,res) => {
