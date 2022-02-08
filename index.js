@@ -49,5 +49,10 @@ app.listen(3000, () => {
             res.redirect('/');
         })
     });
+
+    app.get('/project/:id', async (req,res) => {
+        const project = await Project.findById(req.params.id);
+        res.render('project', { project, months });
+    });
     
 });

@@ -1,0 +1,36 @@
+<%- include('layouts/header.ejs'); -%>
+
+<body>
+    <div id="container">
+        <%- include ('layouts/navigation.ejs'); -%>
+        <div class="project-header">
+            <% if(project.type === 'Musing') { %>
+                <img src="/img/notebook.jpg" />
+            <% } %>
+            <% if(project.type === 'Photo' || project.type === 'Project') { %>
+                <img src=" <%=  project.image %>" />
+            <% } %>
+        </div>
+        <div class="project-container">
+            <div class="project-body-container">
+                <div class="project-title-container">
+                    <p class="project-published">
+                        <%=  months[project.datePosted.getMonth()] %>
+                        <%=  project.datePosted.getDate() %>,
+                        <%=  project.datePosted.getFullYear() %>
+                    </p>
+                    <h1 class="project-title"><img src="/img/project.svg">
+                        <%=  project.title %>
+                    </h1>
+                </div>
+                <%=  project.body %>
+                <!--
+                    <h3>Sub Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor ac mi ut lacinia. Etiam eget massa nec sem mattis posuere. Proin placerat ornare ante rutrum malesuada. Sed venenatis sem ac ex mollis scelerisque. Duis euismod velit eget lorem tincidunt sollicitudin. Fusce ac lobortis quam. Sed dolor ipsum, commodo ut suscipit id, ullamcorper varius lectus. Pellentesque auctor massa in erat accumsan, ac maximus purus tristique. In hac habitasse platea dictumst. Aenean sit amet urna et odio aliquet pulvinar. Nullam bibendum augue et lacus commodo, in mollis metus pellentesque. Aliquam nibh nisi, malesuada ut quam vel, condimentum aliquet risus. Etiam rhoncus urna velit, id interdum dolor condimentum at. Sed aliquet vitae lorem viverra aliquam. Sed vitae ipsum in mauris feugiat rutrum.</p>
+                    <h3>Sub Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor ac mi ut lacinia. Etiam eget massa nec sem mattis posuere. Proin placerat ornare ante rutrum malesuada. Sed venenatis sem ac ex mollis scelerisque. Duis euismod velit eget lorem tincidunt sollicitudin. Fusce ac lobortis quam. Sed dolor ipsum, commodo ut suscipit id, ullamcorper varius lectus. Pellentesque auctor massa in erat accumsan, ac maximus purus tristique. In hac habitasse platea dictumst. Aenean sit amet urna et odio aliquet pulvinar. Nullam bibendum augue et lacus commodo, in mollis metus pellentesque. Aliquam nibh nisi, malesuada ut quam vel, condimentum aliquet risus. Etiam rhoncus urna velit, id interdum dolor condimentum at. Sed aliquet vitae lorem viverra aliquam. Sed vitae ipsum in mauris feugiat rutrum.</p>
+                -->
+            </div>
+        </div>
+    </div>
+<%- include ('layouts/footer.ejs'); %>
