@@ -1,0 +1,11 @@
+<%- include('layouts/header.ejs'); -%>
+<%- include ('layouts/navigation.ejs'); -%>
+<div id="write-post">
+    <h2>Register</h2>
+    <form action="/users/register" method="POST">
+        <input type="text" id="username" placeholder="User Name" name="username" autocomplete="off" />
+        <input type="password" id="password" placeholder="Password" name="password" autocomplete="off" />
+        <input type="submit" value="Register">
+    </form>
+</div>
+<%- include ('layouts/footer.ejs'); %>

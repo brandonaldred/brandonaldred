@@ -407,7 +407,7 @@ input[type="submit"] {
     font-size: 16px;
 }
 
-input[type="text"], textarea {
+input[type="text"], textarea, input[type="password"] {
     margin-top: 45px;
     display: block;
     border-top: none;
@@ -462,6 +462,7 @@ START PROJECT PAGE STYLES
     object-position: center;
     position: relative;
     z-index: -1;
+    height: 100%;
     width: 100%;
 }
 
@@ -609,5 +610,11 @@ END PROJECT PAGE STYLES
 
     .project-title-container {
         width: 60%;
+    }
+
+    .project-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: center;
     }
 }
