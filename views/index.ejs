@@ -25,22 +25,26 @@
                             <%= projects[i].title %>
                         </h3>
                         <% if (projects[i].type === 'Project') { %>
-                            <p><%= projects[i].preview %></p>
+                            <p><%- projects[i].preview %></p>
+                            <p class="read-more">Read More &#8250</p>
                         <% } %>
                         <% if (projects[i].type === 'Photo' || projects[i].type === 'Musing') { %>
-                            <p><%= projects[i].body %></p>
+                            <p><%- projects[i].body %></p>
                         <% } %>
                     </div>
                     <% if (projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
                         <img src="<%= projects[i].image %>" alt="<%= projects[i].title %>" />
-                    <% } %>
-                    <% if(projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
-                        <a href="/project/<%= projects[i]._id %>">
                     <% } %>
                 </div>
                 <% if(projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
                     </a>
                 <% } %>
             <% } %>
+            <div>
+                <ul class="pagination" style="justify-content: flex-end;">
+                    
+                    <li>Next</li>
+                </ul>
+            </div>
             </div>
         <%- include ('layouts/footer.ejs'); %>

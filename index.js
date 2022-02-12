@@ -32,6 +32,7 @@ app.use('*', (req, res, next) => {
     next();
 })
 
+let user = 0;
 
 const months = [
     'January',
@@ -58,6 +59,10 @@ app.listen(3000, () => {
         });
     });
 
+    app.get('/about', (req, res) => {
+        res.render('about');
+    });
+
     app.get('/:type', async (req, res) => {
         const projects = await Project.find({
             type: req.params.type
@@ -82,7 +87,6 @@ app.listen(3000, () => {
 
     app.get('/project/:id', async (req,res) => {
         const project = await Project.findById(req.params.id);
-        console.log(req.session);
         res.render('project', { project, months });
     });
 

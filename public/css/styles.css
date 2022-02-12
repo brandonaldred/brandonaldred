@@ -1,5 +1,7 @@
 :root {
     --blue-on-dark: #00A3FF;
+    --white: #ffffff;
+    --black: #231F20;
     --dark-gray: #2B2B2B;
     --light-gray: #5E5E5E;
     --card-background: #212121;
@@ -15,7 +17,7 @@
 
 body {
     background: var(--dark-gray);
-    color: #FFFFFF;
+    color: var(--white);
     font-family: var(--font);
 }
 
@@ -98,7 +100,7 @@ p {
 
 #header li a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
 }
 
 #header li a:hover {
@@ -152,7 +154,7 @@ p {
 
 #jump-offs {
     margin-top: 50px;
-    background: #000000;
+    background: var(--black);
     padding: 50px 0 35px 0;
     border-bottom: 1px solid var(--light-gray);
 }
@@ -237,7 +239,7 @@ p {
 
 #content a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
 }
 
 #content nav ul{
@@ -287,6 +289,21 @@ p {
 
 .card-copy {
     padding: 25px;
+}
+
+.read-more {
+    color: var(--light-gray);
+    padding: 5px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--card-radius);
+    margin-top: 25px;
+    width: 45%;
+    text-align: center;
+}
+
+.read-more:hover {
+    color: var(--white);
+    border-color: var(--white);
 }
 
 .card-date {
@@ -401,7 +418,7 @@ input[type="file"] {
 
 input[type="submit"] {
     background-color: var(--blue-on-dark);
-    color: #ffffff;
+    color: var(--white);
     width: 100%;
     height: 60px;
     font-size: 16px;
@@ -416,7 +433,7 @@ input[type="text"], textarea, input[type="password"] {
     border-bottom: solid 1px var(--blue-on-dark);
     background: none;
     padding-bottom: 15px;
-    color: #ffffff;
+    color: var(--white);
     width: 100%;
     font: var(--font);
 }
@@ -434,6 +451,28 @@ textarea {
 
 textarea:focus {
     height: 3000px;
+}
+
+.pagination {
+    width: 90%;
+    margin: 10px auto 50px;
+    display: flex;
+}
+
+.pagination li {
+    list-style: none;
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: var(--card-radius);
+    padding: 15px 15px;
+    width: 45%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pagination li:hover {
+    color: var(--blue-on-dark);
+    border-color: var(--blue-on-dark);
 }
 
 
