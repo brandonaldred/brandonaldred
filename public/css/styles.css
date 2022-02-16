@@ -289,6 +289,7 @@ p {
 
 .card-copy {
     padding: 25px;
+    overflow: hidden;
 }
 
 .read-more {
@@ -565,6 +566,15 @@ START PROJECT PAGE STYLES
 .project-body-container p {
     font-size: .9em;
     line-height: 2.25em;
+}
+
+.body-content a {
+    color: var(--blue-on-dark);
+}
+
+.body-content p {
+    font-size: 16px;
+    text-indent: 20px;;
 }
 
 /*
