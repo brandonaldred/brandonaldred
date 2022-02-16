@@ -454,28 +454,35 @@ textarea:focus {
 }
 
 .pagination {
-    width: 90%;
+    width: 100%;
     margin: 10px auto 50px;
     display: flex;
+    justify-content: space-between;
 }
 
-.pagination li {
-    list-style: none;
+.pagination-button {
+    width: 50%;
     text-align: center;
-    width: 45%;
 }
 
-.pagination a:hover {
-    color: var(--blue-on-dark) !important;
-    border-color: var(--blue-on-dark);
-}
-
-.pagination a {
-    color: var(--white);
-    border: 1px solid var(--white);
+.pagination-button a {
+    display: block;
+    text-align: center;
+    color: var(--white) !important;
+    font-weight: bolder;
+    background-color: #383838;
     border-radius: var(--card-radius);
-    padding: 15px 45px;
-    width: 100%;
+    padding: 15px 30px;
+    width: 75%;
+    margin: auto;
+    transition-duration: .1s;
+    transition-timing-function: ease-in-out;
+}
+
+.pagination-button a:hover {
+    transform: scale(1.05);
+    background-color: #383838;
+    border-bottom: 3px solid var(--blue-on-dark);
 }
 
 /*

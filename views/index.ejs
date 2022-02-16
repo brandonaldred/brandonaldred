@@ -7,7 +7,7 @@
         <%- include ('layouts/links.ejs'); -%>
         <div id="content">
             <%- include ('layouts/contentNav.ejs'); -%>
-            <% for (var i = projects.length-1; i >= 0; i--) { %>
+            <% for (var i = 0; i < projects.length; i++) { %>
                 <% if(projects[i].type === 'Photo' || projects[i].type === 'Project') { %>
                     <a href="/project/<%= projects[i]._id %>">
                 <% } %>
@@ -40,11 +40,13 @@
                     </a>
                 <% } %>
             <% } %>
-            <div>
-                <ul class="pagination" style="justify-content: flex-end;">
-                    <% if(p > 1) { %><li><a href="?p=<%= Number(p) - 1 %>">Previous</a></li><% } %>
-                    <li><a href="?p=<%= Number(p) + 1 %>">Next</a></li>
-                </ul>
+            <div class="pagination">
+                <div class="pagination-button">
+                    <% if(p > 1) { %><a href="?p=<%= Number(p) - 1 %>#content">Previous</a><% } %>
+                </div>
+                <div class="pagination-button">
+                    <% if(next) { %><a href="?p=<%= Number(p) + 1 %>#content">Next</a><% } %>
+                </div>
             </div>
             </div>
         <%- include ('layouts/footer.ejs'); %>

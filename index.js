@@ -55,14 +55,15 @@ app.listen(3000, () => {
 
     app.get('/', async (req, res) => {
         let p = req.query.p;
+        let next = true;
         if(!p) { p = 1; }
-        const projects = await Project.find({ });
-        const pages = Math.ceil(projects.length / toShow);
-        let display = [(p - 1) * toShow, p * toShow];
-        if (p === pages ) { display[1] = 0 }
-        console.log(display);
-        res.render('index', {
-            projects, months, p });
+        const list = await Project.find({ });
+        const pages = Math.ceil(list.length / toShow);
+        let display = [(list.length-1) - (p - 1) * toShow, list.length - p * toShow];
+        if (p == pages ) { display[1] = 0; next = false; }
+        let projects = [];
+        for (let i = display[0]; i >= display[1]; i--) { projects.push(list[i]); }
+        res.render('index', { projects, months, p, next });
     });
 
     app.get('/about', (req, res) => {
@@ -70,14 +71,17 @@ app.listen(3000, () => {
     });
 
     app.get('/:type', async (req, res) => {
-        const projects = await Project.find({
-            type: req.params.type
-        });
         let p = req.query.p;
+        let next = true;
         if(!p) { p = 1; }
-        const display = [(p - 1) * toShow, p * toShow];
+        const list = await Project.find({ type: req.params.type });
+        const pages = Math.ceil(list.length / toShow);
+        let display = [(list.length-1) - (p - 1) * toShow, list.length - p * toShow];
+        if (p == pages ) { display[1] = 0; next = false; }
+        let projects = [];
+        for (let i = display[0]; i >= display[1]; i--) { projects.push(list[i]); }
         
-        res.render('index', { projects, months, p })
+        res.render('index', { projects, months, p, next })
     });
 
     app.get('/compose/write', (req,res) => {
