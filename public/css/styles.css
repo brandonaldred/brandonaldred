@@ -461,20 +461,22 @@ textarea:focus {
 
 .pagination li {
     list-style: none;
-    color: var(--white);
-    border: 1px solid var(--white);
-    border-radius: var(--card-radius);
-    padding: 15px 15px;
-    width: 45%;
     text-align: center;
-    cursor: pointer;
+    width: 45%;
 }
 
-.pagination li:hover {
-    color: var(--blue-on-dark);
+.pagination a:hover {
+    color: var(--blue-on-dark) !important;
     border-color: var(--blue-on-dark);
 }
 
+.pagination a {
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: var(--card-radius);
+    padding: 15px 45px;
+    width: 100%;
+}
 
 /*
 START PROJECT PAGE STYLES

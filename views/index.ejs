@@ -42,8 +42,8 @@
             <% } %>
             <div>
                 <ul class="pagination" style="justify-content: flex-end;">
-                    
-                    <li>Next</li>
+                    <% if(p > 1) { %><li><a href="?p=<%= Number(p) - 1 %>">Previous</a></li><% } %>
+                    <li><a href="?p=<%= Number(p) + 1 %>">Next</a></li>
                 </ul>
             </div>
             </div>

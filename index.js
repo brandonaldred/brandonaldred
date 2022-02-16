@@ -33,6 +33,7 @@ app.use('*', (req, res, next) => {
 })
 
 let user = 0;
+const toShow = 5;
 
 const months = [
     'January',
@@ -53,10 +54,15 @@ app.listen(3000, () => {
     console.log('running');
 
     app.get('/', async (req, res) => {
-        const projects = await Project.find({  });
+        let p = req.query.p;
+        if(!p) { p = 1; }
+        const projects = await Project.find({ });
+        const pages = Math.ceil(projects.length / toShow);
+        let display = [(p - 1) * toShow, p * toShow];
+        if (p === pages ) { display[1] = 0 }
+        console.log(display);
         res.render('index', {
-            projects, months
-        });
+            projects, months, p });
     });
 
     app.get('/about', (req, res) => {
@@ -67,7 +73,11 @@ app.listen(3000, () => {
         const projects = await Project.find({
             type: req.params.type
         });
-        res.render('index', { projects, months })
+        let p = req.query.p;
+        if(!p) { p = 1; }
+        const display = [(p - 1) * toShow, p * toShow];
+        
+        res.render('index', { projects, months, p })
     });
 
     app.get('/compose/write', (req,res) => {
