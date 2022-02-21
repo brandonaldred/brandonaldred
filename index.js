@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 const mongoose = require('mongoose');
 const Project = require('./models/project');
-mongoose.connect('mongodb+srv://brandonaldred:1Hcmp%40tt@cluster0.glzir.mongodb.net/brandonaldred', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://brandonaldred:%40Bu2yb0dy@cluster0.glzir.mongodb.net/brandonaldred', { useNewUrlParser: true });
 
 const bodyParser = require('body-parser');
 const User = require('./models/user');
