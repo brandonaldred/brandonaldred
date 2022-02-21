@@ -14,7 +14,7 @@
                 <div class="project-card">
                     <div class="card-copy">
                         <div class="date-type card-date">
-                            <img src="/img/<%= projects[i].type %>.svg" />
+                            <img src="/img/<%= projects[i].type.toLowerCase() %>.svg" />
                             <p>
                                 <%=  months[projects[i].datePosted.getMonth()] %>
                                 <%=  projects[i].datePosted.getDate() %>,
