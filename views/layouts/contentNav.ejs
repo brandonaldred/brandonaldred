@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        <li class="all selected"><a href="/">All</a></li>
-        <li class="projects"><a href="/Project">Projects</a></li>
-        <li class="photos"><a href="/Photo">Photos</a></li>
-        <li class="musings"><a href="/Musing">Musings</a></li>
+        <li class="all <% if (type === "All") { %> selected <% } %>"><a href="/">All</a></li>
+        <li class="projects <% if (type === "Project") { %> selected <% } %>"><a href="/Project">Projects</a></li>
+        <li class="photos <% if (type === "Photo") { %> selected <% } %>"><a href="/Photo">Photos</a></li>
+        <li class="musings <% if (type === "Musing") { %> selected <% } %>"><a href="/Musing">Musings</a></li>
     </ul>
 </nav>

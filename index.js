@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 const mongoose = require('mongoose');
 const Project = require('./models/project');
-mongoose.connect('mongodb://localhost/brandonaldred', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://brandonaldred:1Hcmp%40tt@cluster0.glzir.mongodb.net/brandonaldred', { useNewUrlParser: true });
 
 const bodyParser = require('body-parser');
 const User = require('./models/user');
@@ -50,10 +50,13 @@ const months = [
     'December'
 ];
 
-app.listen(3000, () => {
+let port = process.env.PORT;
+
+app.listen(port, () => {
     console.log('running');
 
     app.get('/', async (req, res) => {
+        const type = 'All';
         let p = req.query.p;
         let next = true;
         if(!p) { p = 1; }
@@ -63,7 +66,7 @@ app.listen(3000, () => {
         if (p == pages ) { display[1] = 0; next = false; }
         let projects = [];
         for (let i = display[0]; i >= display[1]; i--) { projects.push(list[i]); }
-        res.render('index', { projects, months, p, next });
+        res.render('index', { projects, months, p, next, type });
     });
 
     app.get('/about', (req, res) => {
@@ -71,17 +74,19 @@ app.listen(3000, () => {
     });
 
     app.get('/:type', async (req, res) => {
+        const type = req.params.type;
         let p = req.query.p;
         let next = true;
         if(!p) { p = 1; }
-        const list = await Project.find({ type: req.params.type });
+        console.log(type);
+        const list = await Project.find({ type: type });
         const pages = Math.ceil(list.length / toShow);
         let display = [(list.length-1) - (p - 1) * toShow, list.length - p * toShow];
         if (p == pages ) { display[1] = 0; next = false; }
         let projects = [];
         for (let i = display[0]; i >= display[1]; i--) { projects.push(list[i]); }
         
-        res.render('index', { projects, months, p, next })
+        res.render('index', { projects, months, p, next, type })
     });
 
     app.get('/compose/write', (req,res) => {
@@ -100,8 +105,9 @@ app.listen(3000, () => {
     });
 
     app.get('/project/:id', async (req,res) => {
-        const project = await Project.findById(req.params.id);
-        res.render('project', { project, months });
+        const type = req.params.id
+        const project = await Project.findById(type);
+        res.render('project', { project, months, type });
     });
 
     app.get('/users/register', async (req, res) => {
