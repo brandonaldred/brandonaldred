@@ -9,7 +9,10 @@ app.set('view engine', 'ejs');
 
 const mongoose = require('mongoose');
 const Project = require('./models/project');
-mongoose.connect('mongoDbURI', { useNewUrlParser: true });
+const username = process.env.dbName;
+const pass = process.env.dbPass;
+const url = `mongodb+srv://${username}:${pass}@cluster0.glzir.mongodb.net/${username}`;
+mongoose.connect(url, { useNewUrlParser: true });
 
 const bodyParser = require('body-parser');
 const User = require('./models/user');
